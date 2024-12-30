@@ -4,7 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiz-mat O'quv Markazi</title>
-    <link rel="stylesheet" href="styles.css"> <!-- CSS faylini ulash -->
+    <!--<link rel="stylesheet" href="styles.css">-->
+	<style>
+				/* Asosiy uslublar */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f4f4f4;
+		}
+
+		header {
+			background-color: #333;
+			padding: 15px;
+			color: white;
+		}
+
+		nav ul {
+			list-style-type: none;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+		}
+
+		nav ul li {
+			margin: 0 20px;
+		}
+
+		nav ul li a {
+			color: white;
+			text-decoration: none;
+			font-size: 18px;
+		}
+
+		/* Hero section */
+		.hero {
+			background-color: #2c3e50;
+			color: white;
+			padding: 80px 20px;
+			text-align: center;
+		}
+
+		.hero h2 {
+			font-size: 36px;
+		}
+
+		.hero p {
+			font-size: 18px;
+		}
+
+		.btn-primary {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #3498db;
+			color: white;
+			text-decoration: none;
+			border-radius: 5px;
+		}
+
+		/* Darslar bo'limi */
+		.courses {
+			padding: 40px 20px;
+			background-color: #ecf0f1;
+			text-align: center;
+		}
+
+		.course-list {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+		}
+
+		.course {
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 8px;
+			width: 200px;
+		}
+
+		.course h3 {
+			color: #2980b9;
+		}
+
+		/* About Section */
+		.about {
+			padding: 40px 20px;
+			background-color: #f4f4f4;
+			text-align: center;
+		}
+
+		.contact {
+			display: none; /* Standart holatda yashirilgan */
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			padding: 30px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			width: 300px;
+		}
+
+		input, textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 15px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+
+		button {
+			width: 100%;
+			padding: 10px;
+			background-color: #3498db;
+			color: white;
+			border: none;
+			border-radius: 5px;
+		}
+
+		button:hover {
+			background-color: #2980b9;
+		}
+
+		/* Modalni yopish tugmasi */
+		.close-btn {
+			margin-top: 10px;
+			padding: 5px 10px;
+			background-color: #ff4c4c;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		/* Footer */
+		footer {
+			background-color: #333;
+			color: white;
+			text-align: center;
+			padding: 15px 0;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+		}
+	</style>
 </head>
 <body>
     <!-- Header -->
@@ -72,6 +216,24 @@
     </footer>
 
     <!-- JavaScript fayli -->
-    <script src="script.js"></script> <!-- JavaScript faylini ulash -->
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const showContact = document.getElementById('showContact'); // Bog'lanish tugmasi
+			const contactSection = document.getElementById('contact'); // Modal oyna
+			const closeModal = document.getElementById('closeModal'); // Modalni yopish tugmasi
+
+			// Modalni ochish
+			showContact.addEventListener('click', function (event) {
+				event.preventDefault(); // Havola sifatida ishlamasligi uchun
+				contactSection.style.display = 'block'; // Modalni ko'rsatish
+			});
+
+			// Modalni yopish
+			closeModal.addEventListener('click', function () {
+				contactSection.style.display = 'none'; // Modalni yashirish
+			});
+		});
+	</script>
+
 </body>
 </html>
